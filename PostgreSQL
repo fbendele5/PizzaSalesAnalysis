@@ -1,0 +1,31 @@
+-- ========== Create the tables ============ --
+
+CREATE TABLE pizzas (
+  pizza_id VARCHAR(50) PRIMARY KEY,     --This is the unique identifier for each pizza
+  pizza_type_id VARCHAR(50) NOT NULL,   --This links to pizza_types table 
+  size VARCHAR(10) NOT NULL,            --This shows the various sizes (S, M, L)
+  price DECIMAL(10, 2) NOT NULL         --This depicts the prices of the pizzas in USD
+);
+
+CREATE TABLE pizza_types (
+  pizza_type_id VARCHAR(50) PRIMARY KEY,   --This is the unique identifier for each pizza
+  name VARCHAR(255) NOT NULL,              --This includes the full name of each pizza type
+  category VARCHAR(50) NOT NULL            --This lists the category of the pizzas
+);
+
+CREATE TABLE orders (
+  order_id SERIAL PRIMARY KEY.          --This is the unique identifier for each order
+  date DATE NOT NULL,                   --This shows the date placed for an order
+  time TIME NOT NULL,                   --This shows the time placed for an order
+);
+
+CREATE TABLE order_details (
+  order_details_id SERIAL PRIMARY KEY,     --This is the unique identifier for each order detail
+  order_id INTEGER NOT NULL,               --This links to the orders table
+  pizza_id VARCHAR(50) NOT NULL,           --This links to the pizzas table
+  quantity INTEGER NOT NULL                --This shows the number of pizzas ordered
+
+
+
+
+quantity INTEGER NOT NULL  
