@@ -24,8 +24,31 @@ CREATE TABLE order_details (
   order_id INTEGER NOT NULL,               --This links to the orders table
   pizza_id VARCHAR(50) NOT NULL,           --This links to the pizzas table
   quantity INTEGER NOT NULL                --This shows the number of pizzas ordered
+);
+
+-- ========== Upload the CSV files ============ --
+COPY pizzas 
+FROM 'D:/FBendele/CSV datasets/Pizza/pizzas.csv'
+DELIMITER ','
+CSV HEADER;
+SELECT * FROM pizzas;
+
+COPY pizza_types
+FROM 'D:/FBendele/CSV datasets/Pizza/pizza_types.csv'
+DELIMITER ','
+CSV HEADER;
+SELECT * FROM pizza_types;
+
+COPY orders 
+FROM 'D:/FBendele/CSV datasets/Pizza/orders.csv'
+DELIMITER ','
+CSV HEADER;
+SELECT * FROM orders;
+
+COPY pizzas 
+FROM 'D:/FBendele/CSV datasets/Pizza/pizzas.csv'
+DELIMITER ','
+CSV HEADER;
+SELECT * FROM pizzas;
 
 
-
-
-quantity INTEGER NOT NULL  
